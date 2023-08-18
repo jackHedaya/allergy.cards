@@ -9,7 +9,7 @@ const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
-    <main className={cx(inter.className, "text-acblue")}>
+    <main className={cx(inter.className, "text-acblue bg-opacity-10 bg-blue-100")}>
       <div className="flex flex-col h-screen">
         <nav className="flex flex-row items-center p-6 gap-10">
           <a href="#" className="flex flex-row items-center gap-x-4">
@@ -91,15 +91,31 @@ export default function Home() {
         <div
           className={cx(
             lalezar.className,
-            "flex flex-col justify-center items-center gap-5 text-4xl flex-grow"
+            "flex flex-col justify-center items-center gap-5 flex-[0.75] p-10"
           )}
         >
-          <div>{'"Peanuts"'}</div>
+          <Image
+            className="translate-x-[-3rem] shadow-lg"
+            src="/card.png"
+            alt="card"
+            layout="fixed"
+            width={400}
+            height={400}
+          />
+
           <BiDownArrowAlt className="text-4xl" />
-          <div>{'"Cacahuètes"'}</div>
+
+          <Image
+            className="translate-x-[3rem] shadow-lg"
+            src="/french-card.png"
+            alt="card"
+            layout="fixed"
+            width={400}
+            height={400}
+          />
         </div>
       </div>
-      <div className="flex justify-center align-center pb-24 pt-5">
+      <div className="flex justify-center align-center pb-24">
         <BuyButton className="m-auto" size="lg">
           Get Started
         </BuyButton>
