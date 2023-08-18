@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         acpink: "#FF6DB3",
+        acblue: "#19213D",
       },
     },
   },
