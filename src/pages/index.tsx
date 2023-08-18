@@ -55,7 +55,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex text-white flex-row justify-evenly items-center w-screen bg-acblue py-16">
+      <div className="flex text-white flex-row justify-evenly items-center w-screen bg-acblue py-20">
         <div className="flex flex-row justify-evenly flex-1">
           <QualityCard title="Easy to Use">
             {
@@ -74,7 +74,7 @@ export default function Home() {
           </QualityCard>
         </div>
       </div>
-      <div className="px-16 py-16 leading-snug flex flex-row justify-evenly items-center">
+      <div className="px-10 py-10 leading-snug flex flex-row justify-evenly items-center">
         <div className="flex flex-col space-y-10">
           <h2 className="text-5xl font-bold leading-snug">
             Traveling?
