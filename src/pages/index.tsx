@@ -1,10 +1,11 @@
 import Image from "next/image";
 import cx from "classnames";
-import { Inter } from "next/font/google";
+import { Inter, Lalezar } from "next/font/google";
 import { HTMLProps, useRef } from "react";
-import { BiRightArrowAlt } from "react-icons/bi";
+import { BiRightArrowAlt, BiDownArrowAlt } from "react-icons/bi";
 
 const inter = Inter({ subsets: ["latin"] });
+const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
@@ -24,13 +25,13 @@ export default function Home() {
           </div>
         </nav>
         <div className="flex flex-row justify-evenly items-center flex-1 pb-5">
-          <div className="space-y-5">
+          <div className="space-y-7">
             <h2 className="text-6xl font-bold leading-snug">
               Dine with
               <br />
-              <span className="text-acpink">Peace of Mind</span>
+              {pink("Peace of Mind")}
             </h2>
-            <p className="block text-2xl mt-4 max-w-md">
+            <p className="block text-2xl max-w-md translate-y-[-1rem]">
               A safer and more discreet way to help restaurant staff keep you
               safe
             </p>
@@ -41,8 +42,9 @@ export default function Home() {
               <div className="flex items-center justify-center w-[350px] h-[350px] rounded-full bg-white opacity-50">
                 <div className="w-[300px] h-[300px] rounded-full bg-acpink opacity-50" />
               </div>
-              <div className="absolute top-0 left-0 w-full h-full drop-shadow-2xl">
+              <div className="absolute top-0 left-0 w-full h-full hover:scale-110 transition-[all] drop-shadow-2xl">
                 <Image
+                  className=""
                   src={"/card.png"}
                   alt="card"
                   layout="fill"
@@ -72,8 +74,61 @@ export default function Home() {
           </QualityCard>
         </div>
       </div>
+      <div className="px-16 py-16 leading-snug flex flex-row justify-evenly items-center">
+        <div className="flex flex-col space-y-10">
+          <h2 className="text-5xl font-bold leading-snug">
+            Traveling?
+            <br />
+            {pink("We've got you covered")}
+          </h2>
+
+          <p className="text-2xl max-w-xl">
+            {
+              "Just select the language you need, and we'll take care of the rest. Your translated allergy cards will be delivered right to your doorstep, ready for your next adventure."
+            }
+          </p>
+        </div>
+        <div
+          className={cx(
+            lalezar.className,
+            "flex flex-col justify-center items-center gap-5 text-4xl flex-grow"
+          )}
+        >
+          <div>{'"Peanuts"'}</div>
+          <BiDownArrowAlt className="text-4xl" />
+          <div>{'"Cacahuètes"'}</div>
+        </div>
+      </div>
+      <div className="flex justify-center align-center pb-24 pt-5">
+        <BuyButton className="m-auto" size="lg">
+          Get Started
+        </BuyButton>
+      </div>
+      <footer className="bg-acblue text-white">
+        <div className="flex flex-row justify-evenly items-center py-10">
+          <div className="flex flex-col space-y-5">
+            <h3 className="text-2xl font-bold">allergy.cards</h3>
+            <p className="text-xl">Made with ❤️ in NYC</p>
+          </div>
+          <div className="flex flex-col space-y-5">
+            <h3 className="text-2xl font-bold">Contact</h3>
+            <p className="text-xl">
+              <a
+                href="mailto:jack@allergy.cards"
+                className="hover:text-acpink transition-colors duration-200"
+              >
+                Support
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
+}
+
+function pink(str: string) {
+  return <span className="text-acpink">{str}</span>;
 }
 
 function QualityCard(props: { title: string; children: string }) {
