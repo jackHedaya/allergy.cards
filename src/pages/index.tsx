@@ -1,8 +1,9 @@
 import Image from "next/image";
 import cx from "classnames";
 import { Inter, Lalezar } from "next/font/google";
-import { HTMLProps, useRef } from "react";
+import { HTMLProps } from "react";
 import { BiRightArrowAlt, BiDownArrowAlt } from "react-icons/bi";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
@@ -12,6 +13,22 @@ export default function Home() {
     <main
       className={cx(inter.className, "text-acblue bg-opacity-10 bg-blue-100")}
     >
+      <Head>
+        <title>Allergy Cards | Dine with Peace of Mind</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="A safer and more discreet way to help restaurant staff keep you safe"
+        />
+        <meta
+          name="keywords"
+          content="allergy, cards, allergy cards, restaurant, food, allergy cards for restaurants, dietary restriction cards, dietary restriction"
+        />
+        <meta name="author" content="Jack Hedaya" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="theme-color" content="#19213D" />
+      </Head>
       <div className="flex flex-col md:h-screen min-h-[500px]">
         <nav className="flex md:flex-row items-center p-6 gap-10 flex-col">
           <a href="#" className="flex flex-row items-center gap-x-4">
@@ -111,7 +128,7 @@ export default function Home() {
 
           <Image
             className="md:translate-x-[3rem] drop-shadow-lg hover:scale-110 transition-[all]"
-            src="/card.png"
+            src="/french-card.png"
             alt="card"
             width={400}
             height={400}
