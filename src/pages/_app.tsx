@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      <Analytics mode="auto" />;
+      <Analytics mode="auto" />
     </>
   )
 }
