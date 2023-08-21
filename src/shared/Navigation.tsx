@@ -1,7 +1,7 @@
-import Image from "next/image";
-import cx from "classnames";
-import { BuyButton } from "./BuyButton";
-import { HTMLProps } from "react";
+import Image from 'next/image'
+import cx from 'classnames'
+import { BuyButton } from './BuyButton'
+import { HTMLProps } from 'react'
 
 export function Navigation() {
   return (
@@ -18,17 +18,17 @@ export function Navigation() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
 function NavLink(props: HTMLProps<HTMLAnchorElement>) {
   return (
     <a
       className={cx(
-        "text-lg hover:text-acpink transition-colors duration-200",
+        'text-lg hover:text-acpink transition-colors duration-200',
         props.className
       )}
       {...props}
     />
-  );
+  )
 }

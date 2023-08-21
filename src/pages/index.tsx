@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Head from "next/head";
-import cx from "classnames";
-import { Inter, Lalezar } from "next/font/google";
-import { BiDownArrowAlt } from "react-icons/bi";
-import { BuyButton } from "@/shared/BuyButton";
-import { Navigation } from "@/shared/Navigation";
+import Image from 'next/image'
+import Head from 'next/head'
+import cx from 'classnames'
+import { Inter, Lalezar } from 'next/font/google'
+import { BiDownArrowAlt } from 'react-icons/bi'
+import { BuyButton } from '@/shared/BuyButton'
+import { Navigation } from '@/shared/Navigation'
 
-const inter = Inter({ subsets: ["latin"] });
-const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ['latin'] })
+const lalezar = Lalezar({ subsets: ['latin'], weight: '400' })
 
 export default function Home() {
   return (
     <main
-      className={cx(inter.className, "text-acblue bg-opacity-10 bg-blue-100")}
+      className={cx(inter.className, 'text-acblue bg-opacity-10 bg-blue-100')}
     >
       <Head>
         <title>Allergy Cards | Dine with Peace of Mind</title>
@@ -37,7 +37,7 @@ export default function Home() {
             <h2 className="text-6xl font-bold leading-snug">
               Dine with
               <br />
-              {pink("Peace of Mind")}
+              {pink('Peace of Mind')}
             </h2>
             <p className="block text-2xl max-w-md translate-y-[-1rem] md:px-0 px-5">
               A safer and more discreet way to help restaurant staff keep you
@@ -55,7 +55,7 @@ export default function Home() {
             <div className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-[all] drop-shadow-2xl">
               <Image
                 className=""
-                src={"/card.png"}
+                src={'/card.png'}
                 alt="card"
                 fill
                 objectFit="contain"
@@ -73,12 +73,12 @@ export default function Home() {
           </QualityCard>
           <QualityCard title="Adhesive Strip">
             {
-              "Allergy Cards attach to order slips with an adhesive strip, ensuring clear allergy communication. Simply use and discard."
+              'Allergy Cards attach to order slips with an adhesive strip, ensuring clear allergy communication. Simply use and discard.'
             }
           </QualityCard>
           <QualityCard title="Direct Shipping">
             {
-              "We handle the printing and shipping, sending your cards directly to your doorstep."
+              'We handle the printing and shipping, sending your cards directly to your doorstep.'
             }
           </QualityCard>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
         <div
           className={cx(
             lalezar.className,
-            "flex flex-col justify-center items-center gap-5 max-w-[600px] px-0 py-10 md:px-10"
+            'flex flex-col justify-center items-center gap-5 max-w-[600px] px-0 py-10 md:px-10'
           )}
         >
           <div className="w-full min-h-[200px] relative drop-shadow-lg hover:scale-110 transition-[all]">
@@ -155,11 +155,11 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
+  )
 }
 
 function pink(str: string) {
-  return <span className="text-acpink">{str}</span>;
+  return <span className="text-acpink">{str}</span>
 }
 
 function QualityCard(props: { title: string; children: string }) {
@@ -168,5 +168,5 @@ function QualityCard(props: { title: string; children: string }) {
       <h3 className="text-acpink font-bold">{props.title}</h3>
       <p>{props.children}</p>
     </div>
-  );
+  )
 }
