@@ -26,7 +26,7 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <div className="flex md:flex-row md:justify-evenly items-center flex-1 pb-5 flex-col md:text-left text-center space-y-10 md:space-y-0">
+        <div className="flex md:flex-row md:justify-evenly items-center flex-1 flex-col md:text-left text-center space-y-10 md:space-y-0 md:pb-5 pb-10">
           <div className="space-y-7">
             <h2 className="text-6xl font-bold leading-snug">
               Dine with
@@ -39,26 +39,27 @@ export default function Home() {
             </p>
             <BuyButton size="md">Get Started</BuyButton>
           </div>
-          <div className="flex relative justify-center items-center w-[400px]">
-            <div className="flex justify-center items-center w-[400px] h-[400px] m-auto rounded-full bg-acpink">
+          <div className="flex relative justify-center items-center">
+            <div className="flex justify-center items-center w-96 h-96 m-auto rounded-full bg-acpink">
               <div className="flex justify-center items-center w-5/6 h-5/6 m-auto rounded-full bg-white opacity-50">
                 <div className="w-5/6 h-5/6 m-auto rounded-full bg-acpink opacity-50" />
               </div>
             </div>
 
-            <Image
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-[all] drop-shadow-2xl"
-              src={"/card.png"}
-              alt="card"
-              width={400}
-              height={400}
-              layout="fixed"
-            />
+            <div className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-[all] drop-shadow-2xl">
+              <Image
+                className=""
+                src={"/card.png"}
+                alt="card"
+                fill
+                objectFit="contain"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex text-white flex-row justify-evenly items-center w-screen bg-acblue py-16">
-        <div className="flex flex-row justify-evenly flex-1">
+      <div className="flex text-white justify-evenly items-center w-screen bg-acblue py-16">
+        <div className="flex md:flex-row flex-col items-center space-y-16 md:space-y-0 justify-evenly flex-1">
           <QualityCard title="Easy to Use">
             {
               "Just fill in your allergies, and we'll send you a pack of customized and disposable sticky cards that fit right in your pocket."
@@ -100,7 +101,6 @@ export default function Home() {
             className="translate-x-[-3rem] shadow-lg"
             src="/card.png"
             alt="card"
-            layout="fixed"
             width={400}
             height={400}
           />
@@ -111,7 +111,6 @@ export default function Home() {
             className="translate-x-[3rem] shadow-lg"
             src="/french-card.png"
             alt="card"
-            layout="fixed"
             width={400}
             height={400}
           />
@@ -151,7 +150,7 @@ function pink(str: string) {
 
 function QualityCard(props: { title: string; children: string }) {
   return (
-    <div className="max-w-[250px] space-y-5 text-xl">
+    <div className="max-w-[400px] md:max-w-[250px] space-y-5 text-xl">
       <h3 className="text-acpink font-bold">{props.title}</h3>
       <p>{props.children}</p>
     </div>
