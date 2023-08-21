@@ -115,13 +115,15 @@ export default function Home() {
 
           <BiDownArrowAlt className="text-4xl" />
 
-          <Image
-            className="md:translate-x-[3rem] drop-shadow-lg hover:scale-110 transition-[all]"
-            src="/french-card.png"
-            alt="card"
-            width={400}
-            height={400}
-          />
+          <div className="w-full min-h-[200px] relative drop-shadow-lg hover:scale-110 transition-[all]">
+            <Image
+              className="md:translate-x-[3rem] "
+              src="/french-card.png"
+              alt="card"
+              objectFit="contain"
+              fill
+            />
+          </div>
         </div>
       </div>
       <div className="flex justify-center align-center pb-24">
