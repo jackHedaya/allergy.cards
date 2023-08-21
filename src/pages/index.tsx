@@ -9,9 +9,11 @@ const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
-    <main className={cx(inter.className, "text-acblue bg-opacity-10 bg-blue-100")}>
-      <div className="flex flex-col h-screen">
-        <nav className="flex flex-row items-center p-6 gap-10">
+    <main
+      className={cx(inter.className, "text-acblue bg-opacity-10 bg-blue-100")}
+    >
+      <div className="flex flex-col md:h-screen min-h-[500px]">
+        <nav className="flex md:flex-row items-center p-6 gap-10 flex-col">
           <a href="#" className="flex flex-row items-center gap-x-4">
             <Image src="/logo.svg" alt="logo" width={50} height={50} />
             <h1 className="text-2xl font-bold float-left">allergy.cards</h1>
@@ -24,7 +26,7 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <div className="flex flex-row justify-evenly items-center flex-1 pb-5">
+        <div className="flex md:flex-row md:justify-evenly items-center flex-1 pb-5 flex-col md:text-left text-center space-y-10 md:space-y-0">
           <div className="space-y-7">
             <h2 className="text-6xl font-bold leading-snug">
               Dine with
@@ -37,25 +39,25 @@ export default function Home() {
             </p>
             <BuyButton size="md">Get Started</BuyButton>
           </div>
-          <div>
-            <div className="flex items-center justify-center relative w-[400px] h-[400px] rounded-full bg-acpink">
-              <div className="flex items-center justify-center w-[350px] h-[350px] rounded-full bg-white opacity-50">
-                <div className="w-[300px] h-[300px] rounded-full bg-acpink opacity-50" />
-              </div>
-              <div className="absolute top-0 left-0 w-full h-full hover:scale-110 transition-[all] drop-shadow-2xl">
-                <Image
-                  className=""
-                  src={"/card.png"}
-                  alt="card"
-                  layout="fill"
-                  objectFit="contain"
-                />
+          <div className="flex relative justify-center items-center w-[400px]">
+            <div className="flex justify-center items-center w-[400px] h-[400px] m-auto rounded-full bg-acpink">
+              <div className="flex justify-center items-center w-5/6 h-5/6 m-auto rounded-full bg-white opacity-50">
+                <div className="w-5/6 h-5/6 m-auto rounded-full bg-acpink opacity-50" />
               </div>
             </div>
+
+            <Image
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-[all] drop-shadow-2xl"
+              src={"/card.png"}
+              alt="card"
+              width={400}
+              height={400}
+              layout="fixed"
+            />
           </div>
         </div>
       </div>
-      <div className="flex text-white flex-row justify-evenly items-center w-screen bg-acblue py-20">
+      <div className="flex text-white flex-row justify-evenly items-center w-screen bg-acblue py-16">
         <div className="flex flex-row justify-evenly flex-1">
           <QualityCard title="Easy to Use">
             {
@@ -91,7 +93,7 @@ export default function Home() {
         <div
           className={cx(
             lalezar.className,
-            "flex flex-col justify-center items-center gap-5 flex-[0.75] p-10"
+            "flex flex-col justify-center items-center gap-5 flex-[0.75] p-10 min-w-[400px] max-w-[600px]"
           )}
         >
           <Image
@@ -149,7 +151,7 @@ function pink(str: string) {
 
 function QualityCard(props: { title: string; children: string }) {
   return (
-    <div className="max-w-xs space-y-5 text-2xl">
+    <div className="max-w-[250px] space-y-5 text-xl">
       <h3 className="text-acpink font-bold">{props.title}</h3>
       <p>{props.children}</p>
     </div>
@@ -173,7 +175,7 @@ function BuyButton(props: BuyButtonProps) {
     <a
       href="#"
       className={cx(
-        "inline-block bg-acpink text-white ml-auto rounded-lg border-2 hover:border-acpink hover:text-acpink hover:bg-white transition-colors duration-200",
+        "inline-block bg-acpink text-white ml-auto rounded-lg border-2 hover:border-acpink hover:text-acpink hover:bg-white transition-colors duration-200 min-w-[100px]",
         sizeToClasses[size],
         className
       )}
