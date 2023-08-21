@@ -1,9 +1,10 @@
 import Image from "next/image";
 import cx from "classnames";
 import { Inter, Lalezar } from "next/font/google";
-import { HTMLProps } from "react";
-import { BiRightArrowAlt, BiDownArrowAlt } from "react-icons/bi";
+import { BiDownArrowAlt } from "react-icons/bi";
 import Head from "next/head";
+import { BuyButton } from "@/shared/BuyButton";
+import { Navigation } from "@/shared/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 const lalezar = Lalezar({ subsets: ["latin"], weight: "400" });
@@ -30,19 +31,7 @@ export default function Home() {
         <meta name="theme-color" content="#19213D" />
       </Head>
       <div className="flex flex-col md:h-screen min-h-[500px]">
-        <nav className="flex md:flex-row items-center p-6 gap-10 flex-col">
-          <a href="#" className="flex flex-row items-center gap-x-4">
-            <Image src="/logo.svg" alt="logo" width={50} height={50} />
-            <h1 className="text-2xl font-bold float-left">allergy.cards</h1>
-          </a>
-          <div className="flex-grow">
-            <div className="flex flex-row justify-start items-center gap-x-10">
-              <NavLink href="#">About</NavLink>
-              <NavLink href="#">Contact</NavLink>
-              <BuyButton />
-            </div>
-          </div>
-        </nav>
+        <Navigation />
         <div className="flex md:flex-row md:justify-evenly items-center flex-1 flex-col md:text-left text-center space-y-10 md:space-y-0 md:pb-5 pb-10">
           <div className="space-y-7">
             <h2 className="text-6xl font-bold leading-snug">
@@ -179,45 +168,5 @@ function QualityCard(props: { title: string; children: string }) {
       <h3 className="text-acpink font-bold">{props.title}</h3>
       <p>{props.children}</p>
     </div>
-  );
-}
-
-interface BuyButtonProps extends Omit<HTMLProps<HTMLAnchorElement>, "size"> {
-  size?: "sm" | "md" | "lg";
-}
-
-function BuyButton(props: BuyButtonProps) {
-  const { className, children, size = "sm", ...otherProps } = props;
-
-  const sizeToClasses = {
-    sm: "text-xl px-4 py-2",
-    md: "text-2xl px-6 py-3",
-    lg: "text-3xl px-8 py-4",
-  };
-
-  return (
-    <a
-      href="#"
-      className={cx(
-        "inline-block bg-acpink text-white ml-auto rounded-lg border-2 hover:border-acpink hover:text-acpink hover:bg-white transition-colors duration-200 min-w-[100px]",
-        sizeToClasses[size],
-        className
-      )}
-      {...otherProps}
-    >
-      {props.children ?? "Buy"} <BiRightArrowAlt className="inline-block" />
-    </a>
-  );
-}
-
-function NavLink(props: HTMLProps<HTMLAnchorElement>) {
-  return (
-    <a
-      className={cx(
-        "text-lg hover:text-acpink transition-colors duration-200",
-        props.className
-      )}
-      {...props}
-    />
   );
 }
