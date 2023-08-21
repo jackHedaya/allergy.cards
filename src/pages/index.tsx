@@ -33,14 +33,14 @@ export default function Home() {
               <br />
               {pink("Peace of Mind")}
             </h2>
-            <p className="block text-2xl max-w-md translate-y-[-1rem]">
+            <p className="block text-2xl max-w-md translate-y-[-1rem] md:px-0 px-5">
               A safer and more discreet way to help restaurant staff keep you
               safe
             </p>
             <BuyButton size="md">Get Started</BuyButton>
           </div>
           <div className="flex relative justify-center items-center">
-            <div className="flex justify-center items-center w-96 h-96 m-auto rounded-full bg-acpink">
+            <div className="flex justify-center items-center w-80 h-80 md:w-96 md:h-96 m-auto rounded-full bg-acpink">
               <div className="flex justify-center items-center w-5/6 h-5/6 m-auto rounded-full bg-white opacity-50">
                 <div className="w-5/6 h-5/6 m-auto rounded-full bg-acpink opacity-50" />
               </div>
@@ -58,8 +58,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex text-white justify-evenly items-center w-screen bg-acblue py-16">
-        <div className="flex md:flex-row flex-col items-center space-y-16 md:space-y-0 justify-evenly flex-1">
+      <div className="flex text-white justify-evenly items-center w-screen bg-acblue py-10">
+        <div className="flex md:flex-row flex-col items-center md:items-start space-y-16 md:space-y-0 justify-evenly flex-1 px-10">
           <QualityCard title="Easy to Use">
             {
               "Just fill in your allergies, and we'll send you a pack of customized and disposable sticky cards that fit right in your pocket."
@@ -77,15 +77,15 @@ export default function Home() {
           </QualityCard>
         </div>
       </div>
-      <div className="px-10 py-10 leading-snug flex flex-row justify-evenly items-center">
+      <div className="px-10 py-10 leading-snug flex md:flex-row flex-col justify-evenly items-center">
         <div className="flex flex-col space-y-10">
-          <h2 className="text-5xl font-bold leading-snug">
+          <h2 className="text-5xl font-bold leading-snug md:text-left text-center">
             Traveling?
             <br />
             {pink("We've got you covered")}
           </h2>
 
-          <p className="text-2xl max-w-xl">
+          <p className="text-2xl md:max-w-xl md:text-left text-center">
             {
               "Just select the language you need, and we'll take care of the rest. Your translated allergy cards will be delivered right to your doorstep, ready for your next adventure."
             }
@@ -94,22 +94,24 @@ export default function Home() {
         <div
           className={cx(
             lalezar.className,
-            "flex flex-col justify-center items-center gap-5 flex-[0.75] p-10 min-w-[400px] max-w-[600px]"
+            "flex flex-col justify-center items-center gap-5 max-w-[600px] px-0 py-10 md:px-10"
           )}
         >
-          <Image
-            className="translate-x-[-3rem] shadow-lg"
-            src="/card.png"
-            alt="card"
-            width={400}
-            height={400}
-          />
+          <div className="w-full min-h-[200px] relative drop-shadow-lg hover:scale-110 transition-[all]">
+            <Image
+              className="md:translate-x-[-3rem] "
+              src="/card.png"
+              alt="card"
+              objectFit="contain"
+              fill
+            />
+          </div>
 
           <BiDownArrowAlt className="text-4xl" />
 
           <Image
-            className="translate-x-[3rem] shadow-lg"
-            src="/french-card.png"
+            className="md:translate-x-[3rem] drop-shadow-lg hover:scale-110 transition-[all]"
+            src="/card.png"
             alt="card"
             width={400}
             height={400}
@@ -121,8 +123,9 @@ export default function Home() {
           Get Started
         </BuyButton>
       </div>
-      <footer className="bg-acblue text-white">
-        <div className="flex flex-row justify-evenly items-center py-10">
+
+      <footer className="bg-acblue text-white pt-10 space-y-8 pb-5">
+        <div className="flex flex-row justify-evenly items-center">
           <div className="flex flex-col space-y-5">
             <h3 className="text-2xl font-bold">allergy.cards</h3>
             <p className="text-xl">Made with ❤️ in NYC</p>
@@ -138,6 +141,11 @@ export default function Home() {
               </a>
             </p>
           </div>
+        </div>
+        <div className="flex flex-row justify-center items-center">
+          <p className="text-gray-300 text-sm">
+            © {new Date().getFullYear()} allergy.cards. All rights reserved.
+          </p>
         </div>
       </footer>
     </main>
