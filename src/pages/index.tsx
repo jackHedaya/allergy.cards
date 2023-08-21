@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Head from "next/head";
 import cx from "classnames";
 import { Inter, Lalezar } from "next/font/google";
 import { BiDownArrowAlt } from "react-icons/bi";
-import Head from "next/head";
 import { BuyButton } from "@/shared/BuyButton";
 import { Navigation } from "@/shared/Navigation";
 
