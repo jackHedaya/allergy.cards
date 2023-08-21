@@ -100,15 +100,14 @@ export default function Home() {
         <div
           className={cx(
             lalezar.className,
-            'flex flex-col justify-center items-center gap-5 max-w-[600px] px-0 py-10 md:px-10'
+            'flex flex-col justify-center items-center gap-5 max-w-[600px] px-0 py-10 md:px-10 ml-[2rem]'
           )}
         >
-          <div className="w-full min-h-[200px] relative drop-shadow-lg hover:scale-110 transition-[all]">
+          <div className="w-full min-h-[200px] min-w-[20rem] relative drop-shadow-lg hover:scale-110 transition-[all]">
             <Image
-              className="md:translate-x-[-3rem] "
+              className="md:translate-x-[-3rem] object-contain"
               src="/card.png"
               alt="card"
-              objectFit="contain"
               fill
             />
           </div>
@@ -117,10 +116,9 @@ export default function Home() {
 
           <div className="w-full min-h-[200px] relative drop-shadow-lg hover:scale-110 transition-[all]">
             <Image
-              className="md:translate-x-[3rem] "
+              className="md:translate-x-[3rem] object-contain"
               src="/french-card.png"
               alt="card"
-              objectFit="contain"
               fill
             />
           </div>
